@@ -1,0 +1,49 @@
+"""
+User Input Can Be Of Different Type
+  Name: (string)
+  Age: (Number)
+  DOB: (Date)
+  List
+  Dictionary
+"""
+
+#String as an input
+#By default python takes user input as string, so we can simply use input() function to get string input.
+
+inp = input("Enter name: ")
+print(inp, type(inp))
+
+#Number as an input
+#To get user input as number we need to convert string into number. For integer input use int() function for float input use float() function.
+
+age = int(input("Enter Age: "))
+exp = float(input("Enter work experience: "))
+print(f"Work Experience: {exp} years", type(exp))
+print("Age: {} years", type(age))
+
+#Date as an input
+#To get date as an input first get it as "-" or "/" separted string. Then use split(separator) function to split and convert into list and then use map function to convert every item to int and then unpack values and print them.
+
+dob1 = input("enter Dob in dd-mm-yyyy format: ")
+dob1 = map(int, dob1.split("_"))
+d1, m1, y1 = dob1
+print(f"""Date: {d1}
+Month: {m1}
+Year: {y1}"""
+)
+
+#List as an input
+#To get list as an input first provide coma separated or space separated items then use list to convert it into a list
+
+languages = input("Enter coma separated language name: ")
+languages = languages.split(",")
+print(languages)
+
+#Dictionary as an input
+
+users = dict()
+for i in range (3):
+  user = input("key: value pair: ").split(":")
+  user[user[0]] = user[1]
+  
+print(users)
